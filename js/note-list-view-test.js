@@ -19,3 +19,13 @@ function returnAListThatHasOneNote(){
   assert.isTrue(noteListView.toHtml() === "<ul><li><div>Favourite drink: seltzer</div></li></ul>")
 }
 returnAListThatHasOneNote();
+
+
+function returnAListThatHasSeveralNotes(){
+  var noteList = new NoteList();
+  noteList.add("Favourite food: pesto")
+  noteList.add("Favourite drink: seltzer")
+  var noteListView = new NoteListView(noteList);
+  assert.isTrue(noteListView.toHtml() === "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>")
+}
+returnAListThatHasSeveralNotes();
