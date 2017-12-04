@@ -1,7 +1,10 @@
-(function(){
+(function(exports){
   function test(){
     var noteList = new NoteList();
-    assert.isTrue(noteList.list() === [])
+    var note = new Note();
+    noteList.add(note)
+    assert.isTrue(noteList.list()[0] === note)
+
   }
   test();
 })(this)
