@@ -3,4 +3,8 @@ function changeApp(content){
   element.innerHTML = content;
 
 }
-changeApp('howdy');
+var noteList = new NoteList();
+noteList.add("Favourite drink: seltzer")
+var view = new NoteListView(noteList);
+view.toHtml()
+changeApp(view.toHtml());
