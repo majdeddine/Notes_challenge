@@ -1,13 +1,15 @@
+function DoubleNote(text) {
+}
+var noteList = new NoteList(DoubleNote);
+
 function testNoteListReturnAnArray(){
-  var noteList = new NoteList();
   assert.isTrue(noteList.list() instanceof Array);
 
 }
 testNoteListReturnAnArray();
 
 function testAddAndStoreANote(){
-  var noteList = new NoteList();
   noteList.add("Favourite drink: seltzer")
-  assert.isTrue(noteList.list()[0] === "Favourite drink: seltzer")
+  assert.isTrue(noteList.list()[0] instanceof DoubleNote)
 }
 testAddAndStoreANote();

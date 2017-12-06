@@ -9,7 +9,7 @@
   }
 
   NoteList.prototype.add = function(text){
-    this._list.push(new this._note(text).text());
+    this._list.push(new this._note(text));
   }
 
   exports.NoteList = NoteList;
