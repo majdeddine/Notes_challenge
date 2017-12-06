@@ -1,10 +1,14 @@
-function changeApp(content){
-  var element = document.getElementById('app')
-  element.innerHTML = content;
+(function (exports){
 
-}
-var noteList = new NoteList();
-noteList.add("Favourite drink: seltzer")
-var view = new NoteListView(noteList);
-view.toHtml()
-changeApp(view.toHtml());
+  function NoteController(){
+    this._element = '';
+  }
+
+  NoteController.prototype.getElementOf = function(id){
+    this._element = document.getElementById(id);
+  }
+  NoteController.prototype.changeContent = function(content){
+    this._element.innerHTML = content;
+  }
+  exports.NoteController = NoteController;
+})(this)
