@@ -9,6 +9,15 @@
     this._list.forEach(function(note){arr.push(note.text().slice(0, 20))});
     this._miniTextList = arr;
   }
+
+  NoteListView.prototype.addUrl = function(){
+  var arr = [];
+  var openingTag= "<a href=\"#note/1\">"
+  var closingTag = "</a>"
+  this._miniTextList.forEach(function(text){arr.push(openingTag+text+closingTag)})
+  this._miniTextList = arr
+  }
+
   NoteListView.prototype.toHtml = function(){
     var openingTag = "<ul><li><div>";
     var closingTag = "</div></li></ul>";
