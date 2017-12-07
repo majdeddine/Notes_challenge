@@ -38,3 +38,13 @@ function returnAListOfNoteWithUrl(){
   assert.isTrue(noteListView.toHtml() === "<ul><li><div><a href=\"#note/1\"></a></div></li></ul>");
 }
 returnAListOfNoteWithUrl();
+
+
+function returnTwoDiffrentUrl(){
+  var noteListView = new NoteListView(doubleNoteList);
+  noteListView.minifyText();
+  noteListView.addUrl();
+  console.log(noteListView.toHtml())
+  assert.isTrue(noteListView.toHtml() === "<ul><li><div><a href=\"#note/1\">Favourite food: pest</a></div></li><li><div><a href=\"#note/2\">Favourite drink: sel</a></div></li></ul>")
+}
+returnTwoDiffrentUrl();

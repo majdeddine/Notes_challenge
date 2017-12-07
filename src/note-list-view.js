@@ -12,9 +12,10 @@
 
   NoteListView.prototype.addUrl = function(){
   var arr = [];
-  var openingTag= "<a href=\"#note/1\">"
+   var i = 1
+  function openingTag(index){ return "<a href=\"#note/"+index+"\">"}
   var closingTag = "</a>"
-  this._miniTextList.forEach(function(text){arr.push(openingTag+text+closingTag)})
+  this._miniTextList.forEach(function(text){arr.push(openingTag(i)+text+closingTag); i++;})
   this._miniTextList = arr
   }
 
